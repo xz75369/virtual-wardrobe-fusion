@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Camera, Image, CloudUpload, X, Loader } from "lucide-react";
+import { Camera, Image as ImageIcon, CloudUpload, X, Loader } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
 type ImageUploaderProps = {
@@ -57,8 +57,8 @@ const ImageUploader = ({ title, subtitle, isUserPhoto = false, onImageSelected }
     
     setIsLoading(true);
     
-    // Simulate URL image loading
-    const img = new Image();
+    // Fix: Use the DOM Image constructor properly
+    const img = new window.Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
       const canvas = document.createElement("canvas");
@@ -118,7 +118,7 @@ const ImageUploader = ({ title, subtitle, isUserPhoto = false, onImageSelected }
               ) : (
                 <>
                   <div className="text-4xl text-gray-400 mb-2">
-                    {isUserPhoto ? <Camera className="h-10 w-10" /> : <Image className="h-10 w-10" />}
+                    {isUserPhoto ? <Camera className="h-10 w-10" /> : <ImageIcon className="h-10 w-10" />}
                   </div>
                   <p className="text-sm text-gray-500">点击上传{isUserPhoto ? "照片" : "服装图片"}</p>
                 </>
