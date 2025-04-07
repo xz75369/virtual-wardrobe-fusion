@@ -8,6 +8,7 @@ const AppFooter = () => {
       <div className="flex justify-center space-x-4 mb-2">
         <Link to="/" className="hover:text-coral">首页</Link>
         <Link to="/about" className="hover:text-coral">关于</Link>
+        <Link to="/login" className="hover:text-coral">登录</Link>
       </div>
       <p>© 2025 虚拟试衣间 | 基于IDM-VTON技术</p>
     </footer>
