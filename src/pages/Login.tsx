@@ -33,7 +33,6 @@ const Login = () => {
       });
     }, 1000);
 
-    // Mock verification code sending
     console.log('Sending verification code to:', phoneNumber);
     toast({
       title: "验证码已发送",
@@ -42,14 +41,12 @@ const Login = () => {
   };
 
   const handleWechatLogin = () => {
-    // Mock WeChat authorization
     console.log('Initiating WeChat login...');
     toast({
       title: "微信授权",
       description: "正在尝试微信授权登录",
     });
     
-    // Simulate successful login after 1 second
     setTimeout(() => {
       toast({
         title: "授权成功",
@@ -87,14 +84,12 @@ const Login = () => {
       return;
     }
     
-    // Mock phone login verification
     console.log('Phone login with:', phoneNumber, verificationCode);
     toast({
       title: "登录中",
       description: "正在验证手机号登录信息",
     });
     
-    // Simulate successful login after 1 second
     setTimeout(() => {
       toast({
         title: "登录成功",
